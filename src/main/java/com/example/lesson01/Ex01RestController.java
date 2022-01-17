@@ -54,3 +54,4 @@ public class Ex01RestController {	// Spring Bean (Bean을 객체로 생각하면
 		// 에러처리에 디테일하게 잡을때 좋다!!
 	
 	}
+}

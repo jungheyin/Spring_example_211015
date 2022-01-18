@@ -11,15 +11,15 @@ public class Ex02Controller {
 	
 	@RequestMapping("/lesson01/ex02/1") 
 	// view는 무조건 String 이다!! 
-	// response가 없을경우엔 스프링에서 경로라고 생각한다.
+	// response가 없을경우엔 리턴값이 경로이다!
 	public String view() {
 		// RsponseBody가 아닌 상태로 String을 리턴하면
 		// ReponseBOdy가 있으면 그자체가 리턴된다 생가하면된다.
 		// ViewResolver에 의해 리턴된 String의 경로에 해당하는 view를 찾고 view 화명이 구성된다.
 		
 		// application.properties에서 prefix 와 suffix을 설정해줬으므로
-		// /WEB-INF/jsp/_____.jsp 이므로   
-		//  prifix             suffix
+		// /WEB-INF/jsp/_______.jsp 이므로   
+		//    prifix(lesson01/ex02)suffix
 		return "lesson01/ex02";
 		
 	}

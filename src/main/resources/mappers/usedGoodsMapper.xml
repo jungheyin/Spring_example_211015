@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 복사해서 사용하기! -->
+ 
+ <mapper namespace="com.example.lesson02.dao.UsedGoodsDAO">
+ <!-- mapper을 통해 연결한다. -->
+ 	<select id="selectUsedGoodsList" resultType="com.example.lesson02.model.UsedGoods">  <!-- ID는 DAO의 메소드명과 일치해야한다 -->
+ 		SELECT <!--  가독성 좋은 방법! -->
+ 			*
+ 		FROM
+ 			`used_goods`
+ 	</select>
+ 	
+ </mapper>
+

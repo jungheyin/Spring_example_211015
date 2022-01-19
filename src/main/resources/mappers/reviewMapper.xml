@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 복사해서 사용하기! -->
+ 
+ <mapper namespace="com.example.lesson03.dao.ReviewDAO">
+ 	<select id="selectReview" 
+ 	parameterType="int"
+ 	resultType="com.example.lesson03.model.Review">
+ 		<!--  SELECT *으로 가져오는건 엄청 위험한 쿼리이다!! 모든 컬럼은 모두 써야한다. -->
+ 		SELECT
+ 			`id`
+			,`storeId` 
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`new_review`     <!-- 여기까지만 하면 에러난다. DAO에서 Review 라는 하나의 객체를 담을수 있지만 결과는 여러개가 나오기 때문에  -->
+		WHERE
+			`id` = #{id}
+ 	</select>
+ </mapper>

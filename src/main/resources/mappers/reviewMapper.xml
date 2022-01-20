@@ -5,7 +5,7 @@
  <mapper namespace="com.example.lesson03.dao.ReviewDAO">
  	<select id="selectReview" 
  	parameterType="int"
- 	resultType="com.example.lesson03.model.Review">
+ 	resultType="com.example.lesson03.model.Review" > <!-- resultType은 select에서만 있다!! -->
  		<!--  SELECT *으로 가져오는건 엄청 위험한 쿼리이다!! 모든 컬럼은 모두 써야한다. -->
  		SELECT
  			`id`
@@ -21,4 +21,29 @@
 		WHERE
 			`id` = #{id}
  	</select>
+ 	
+ 	<insert id="insertReview" parameterType="com.example.lesson03.model.Review">
+ 		INSERT INTO `new_review`
+ 		(
+ 			`storeId` 
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt` <!-- createdAt과 updatedAt은 안넣어도 되지만 무엇이 들어가는지 볼수 있게 꼭 넣어준다. -->
+ 		)
+ 		VALUES
+ 		(
+ 			#{storeId}
+ 			, #{menu}
+ 			, #{userName}
+ 			, #{point}
+ 			, #{review}
+ 			, NOW()
+ 			, NOW()
+ 		)
+ 		
+ 		
+ 	</insert>
  </mapper>

@@ -3,7 +3,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- 복사해서 사용하기! -->
  
  <mapper namespace="com.example.lesson04.dao.UserDAO">
- 	<insert id="inseertUser" parameterType="map">
+ 	<insert id="insertUser" parameterType="map">
  		INSERT INTO `new_user`
  		(
 				`id`
@@ -20,6 +20,7 @@
  			,#{name}
  			,#{yyyymmdd}
  			,#{introduce}
+ 			,NOW() 		
  			,NOW() 		
  		)
  		

@@ -19,4 +19,10 @@ public class UserBO {
 	public User getLastUser() {
 		return userDAO.slectLastUser();
 	}
+	
+	// 존재여부 이거나 이름으 가져오거나 방법이 있다.
+	// 존재여부 방법
+	public boolean existUserByName(String name) {
+		return userDAO.existUserByName(name);
+	}
 }

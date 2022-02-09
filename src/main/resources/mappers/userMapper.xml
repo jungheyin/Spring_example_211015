@@ -10,4 +10,14 @@
             `user`
     </select>
 
+	<select id="existUserByName" parameterType="String" resultType="boolean">
+		<!-- count로 가져오게 되면 0: 거짓 , 0이 아닌 수: 참  이것을 판단한다. -->
+		SELECT 
+			count(1)
+		FROM
+			`new_user`
+		WHERE
+			`name` = #{name} <!-- 이때 인덱스를 추가해서 빠르고 쉽게 찾을수 있다. -->
+		
+	</select>
  </mapper>
